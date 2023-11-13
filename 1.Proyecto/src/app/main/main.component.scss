@@ -1,0 +1,130 @@
+
+.container-a{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px gray solid;
+
+}
+
+.container-b{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+border: 1px gray solid;
+}
+
+.container-c{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px gray solid;
+
+
+
+}
+.rp, .rp-b, .rp-c{
+    height: 200px;
+    margin: 30px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.5s;
+}
+
+.rp:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.rp-b:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.rp-c:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu-r{
+    display: flex;
+    justify-content: space-evenly;
+}
+.sp {
+    position: relative;
+
+        -webkit-text-stroke: medium;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        transform: scale(0.8);
+        color: black;
+    text-transform: uppercase;
+      transition: transform 0.3s ease-in-out;
+    }
+    .sp:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+
+
+    .menu-a:hover {
+      transform: scale(1.1);
+    }
+
+
+  .sp::before,
+  .sp::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background: black;
+  }
+
+  .sp::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .sp::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  .t{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    -webkit-text-stroke: medium;
+  }
+
+
+  @media (max-width: 390px) {
+    *{
+        overflow-y: hidden;
+    }
+    .container-a {
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
+    .container-b{
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
+    .container-c{
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+    }
+}

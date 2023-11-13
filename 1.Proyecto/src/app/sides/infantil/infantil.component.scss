@@ -1,0 +1,77 @@
+p {
+  transform: perspective(500px) translateZ(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+p:hover {
+  transform: perspective(500px) translateZ(40px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+.title-i{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+  text-transform: uppercase;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    -webkit-text-stroke-width: thick;
+}
+.card p {
+  display: none;
+}
+
+.card:hover p {
+  display: block;
+}
+
+
+.card img {
+  max-width: 100%;
+}
+
+.i-i{
+   width: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.5s;
+    margin: 25px;
+}
+
+.i-i:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.i-i:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.i-i:hover {
+    transform: rotateY(15deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.box-i{
+    display: flex;
+margin: 25px;
+justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(https://img.freepik.com/fotos-premium/tienda-ropa-venta-al-menor-foto-borrosa-bokeh-foto-borrosa-abstracta-tienda-ropa-fondo_345343-8464.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}

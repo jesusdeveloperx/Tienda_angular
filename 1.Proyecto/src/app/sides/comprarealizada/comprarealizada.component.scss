@@ -1,0 +1,25 @@
+.enhorabuena-container {
+  text-align: center;
+}
+
+.enhorabuena-message {
+  font-size: 24px;
+  color: green;
+  transform-origin: center;
+}
+
+.encuesta {
+  margin-top: 20px;
+}
+
+@keyframes agrandarMensaje {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,205 @@
+.all{
+ padding: 50px;
+
+ margin: 50px;
+background-image: url(	https://img.freepik.com/fotos-premium/compras-abstractas-moda-foto-borrosa-tienda-moda_47840-463.jpg);
+background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.box-t{
+  width: 100%;
+  display: grid;
+  justify-items: center;
+
+}
+
+
+
+img{
+  width: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.5s;
+    margin: 25px;
+}
+img:hover {
+  transform: rotateY(15deg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+
+h2{
+  text-transform: uppercase;
+    -webkit-text-stroke-width: medium;
+    margin: 50px;
+    display: flex;
+    justify-content: center
+}
+.box{
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+    // position: relative;
+    // transform-style: preserve-3d;
+    // perspective: 1000px;
+    // transition: transform 0.5s;
+}
+
+
+input{
+    width: 200px;
+
+}
+.box {
+    background-size: cover;
+    display: grid;
+    justify-items: center;
+}
+
+
+  .box {
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: backdrop-filter 0.5s;
+  }
+
+
+
+.box {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+  @media (max-width: 390px) {
+    .all{
+        display: flex;
+        width: 272px;
+
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+    }
+    #product, #quantity, #price, #total{
+        width: 150px;
+    }
+  }
+.product{
+  display: grid;
+    justify-items: center;
+    margin: 10px
+}
+span{
+  color: white;
+  margin: 5px;
+}
+button{
+  margin: 5px;
+}
+.aviso {
+  background-color: #ffcccb;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+.aviso.ng-enter, .aviso.ng-leave {
+  transition: opacity 3s;
+}
+
+.aviso.ng-enter, .aviso.ng-leave.ng-leave-active {
+  opacity: 0;
+}

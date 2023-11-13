@@ -1,0 +1,48 @@
+<!-- carrito.component.html -->
+<div class="all">
+  <div class="box-t">
+    <h2>Carrito de Compras</h2>
+    <ul>
+      <li class="product" *ngFor="let producto of productosEnCarrito; let i = index">
+        <img [src]="producto.imagenUrl" alt="Producto" (click)="seleccionarImagen(producto.imagenUrl)">
+        <span>Cantidad: {{ producto.cantidad }}(input)="actualizarCantidad()"</span>
+        <button (click)="eliminarProducto(i)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <div class="form-group">
+      <label for="product">Producto</label>
+      <input type="text" id="product" name="product">
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Cantidad</label>
+      <input type="number" id="quantity" name="quantity"(input)="actualizarCantidad()" required>
+    </div>
+
+    <div class="form-group" *ngIf="imagenSeleccionada">
+      <label for="price">Precio Unidad</label>
+      <input type="number" id="price" name="price" [value]="29.9" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="total">Total</label>
+      <input type="number" id="total" name="total" [value]="calcularPrecioTotal()" readonly>
+    </div>
+
+    <button type="button" (click)="agregarProductoAlCarrito()">Agregar al Carrito</button>
+    <button type="button" (click)="comprar()" [disabled]="!tieneProductosEnCarrito()">Tramitar Pedido</button>
+    <div *ngIf="mostrarMensaje" class="aviso">
+      <p>{{ mensajeAviso }}</p>
+    </div>
+    <div *ngIf="mostrarAvisoCarroVacio" class="aviso">
+      <p>Su carrito está vacío. Agregue productos antes de comprar.</p>
+    </div>
+
+    <div *ngIf="mostrarAvisoCompletaCarrito" class="aviso">
+      <p>Completa el carrito antes de tramitar el pedido.</p>
+    </div>
+  </div>
+</div>

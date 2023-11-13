@@ -1,0 +1,72 @@
+<!-- formulario-compra.component.html -->
+<div class="facturacion">
+  <h2>Facturación</h2>
+  <div class="form-wrapper">
+    <h2>Datos Personales</h2>
+  <form class="for">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" formControlName="nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" formControlName="apellidos" required>
+    </div>
+
+    <div class="form-group">
+      <label for="calleNumero">Calle y Número</label>
+      <input type="text" id="calleNumero" formControlName="calleNumero" required>
+    </div>
+
+    <div class="form-group">
+      <label for="localidad">Localidad</label>
+      <input type="text" id="localidad" formControlName="localidad" required>
+    </div>
+
+    <div class="form-group">
+      <label for="provincia">Provincia</label>
+      <input type="text" id="provincia" formControlName="provincia" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" formControlName="telefono" required pattern="\d{9}">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" formControlName="email" required>
+    </div>
+
+  </form>
+</div>
+  <div class="form-container">
+    <div class="form-wrapper">
+      <h2>Ingrese los detalles de su tarjeta de débito</h2>
+
+      <form>
+        <div class="form-group">
+          <label for="numeroTarjeta">Número de Tarjeta:</label>
+          <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="[0-9]{16}" maxlength="16" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fechaCaducidad">Fecha de Caducidad:</label>
+          <input type="text" id="fechaCaducidad" name="fechaCaducidad" placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="codigoSeguridad">Código de Seguridad:</label>
+          <input type="text" id="codigoSeguridad" name="codigoSeguridad" pattern="[0-9]{3}" maxlength="3" required>
+        </div>
+        <div *ngIf="formularioFacturacion.invalid && formularioFacturacion.touched" class="aviso">
+          <p >Completa todos los campos obligatorios.</p>
+        </div>
+        <button type="button" (click)="enviarFormulario()" [disabled]="formularioFacturacion">Enviar</button>
+
+      </form>
+    </div>
+  </div>
+
+</div>

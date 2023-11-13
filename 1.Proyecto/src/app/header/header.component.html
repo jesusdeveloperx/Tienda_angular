@@ -1,0 +1,13 @@
+<div class="header">
+    <img class="l-zara" src="https://www.barrioulriksen.cl/wp-content/uploads/2017/05/Mi-tienda-logo-instagram_Mesa-de-trabajo-1.jpg" alt="logo">
+    <div class="m-all">
+    <a class="menu-a" *ngIf="isMenuVisible" routerLink="/hombre">Hombre</a>
+    <a class="menu-a" *ngIf="isMenuVisible" routerLink="/mujer">Mujer</a>
+    <a class="menu-a" *ngIf="isMenuVisible" routerLink="/infantil">Infantil</a>
+    <a class="menu-a" *ngIf="isMenuVisible" routerLink="/perfil">Perfil</a>
+
+  </div>
+    <img class="l-shop"  *ngIf="isMenuVisible" src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="" routerLink="/carrito"/>
+    <img class="l-menu" (click)="toggleMenu()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAABLS0uWlpbPz8/8/Pzu7u7Hx8efn5+FhYWPj49eXl7h4eH19fWioqIeHh46OjpHR0e8vLzW1tbCwsLKyspZWVlCQkJRUVFycnKurq60tLQNDQ16enpoaGgXFxd+XyVdAAACPElEQVR4nO3d6VLqQBRF4QYMUwSHAHFAff+3lOZeU235z6qd3Z6s7w1WQROS9JASAAAAAAAAAAAAAAAAAExbs9q28/G121UzSt9yM/PZLPWBa2Nfthb3NSdz4Gx2kn5Vm97dd9ErE/2fYHbSBbrH4BfZWFy6ywaqX1TnZeK7jSawcXcVND82K3dWYSUp3LqzCltJYevOKrSSwrk7qzCn8Fee3FmFJ0nhszur8CwpfHFnFV4khbfurMKtpDDdu7sG95rAdHCHDQ6iwvTgLvtPc63IahmJolGYPbrbrh51gSm9uusuXpWBKR0/zH0fR21gSjvvnf5mpw7Mjev+bKk79+sx+q6W3c34uhGe6AMAAAAAAAAAgL9md9wvxrc/jvVe5uCbwtfKpigUOu90hf5GHbiw9mULbeCbu+/iTRlYxzRhzQThq1pmemtmeV80ntf3P51VhXt32WAvKrxzhw3uNIGdu6vQSQprWdeVadZ2vbuzCu+Swvhz9VlvMSbNZxh/HMb/LY1/PYz/n2YC/0tT+HuL+PeHE7jHn8Bzmgk8a7M/L30QXQm/if7MO4v+3gIAAAAAAAAAAPwhwfeJir7XV/j92sLvuRd+38Twe1/G3780/B608fcRDr8XdC2jMNOMxPh7ssffVz/+XP346y3iF8Y/Z6aOCcL/aKYJ1zLLO9PM9I5/Zlf8c9cmcHZeNWu7ZEtmJnCG5QTOIY1/lmzyL2ATjsEv4c90TvHP5QYAAAAAAAAAAAAAAACAen0CwaI/7mLCS7YAAAAASUVORK5CYII=" alt="menu">
+  </div>
+  <router-outlet></router-outlet>

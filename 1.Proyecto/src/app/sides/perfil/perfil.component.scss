@@ -1,0 +1,48 @@
+.sesion{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url(https://img.freepik.com/fotos-premium/compras-abstractas-moda-foto-borrosa-tienda-moda_47840-463.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login-container {
+  width: 500px;
+  margin: 70px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: grid;
+  justify-items: center;
+}
+.form-p{
+  display: grid;
+  justify-items: center;
+}
+.form-group {
+  margin-bottom: 15px;
+  display: grid;
+  justify-items: center;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 200px;
+  padding: 5px;
+  margin: 25px;
+
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}

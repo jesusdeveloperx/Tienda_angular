@@ -1,0 +1,83 @@
+.facturacion{
+  display: grid;
+    justify-items: center;
+}
+.for{
+  display: grid;
+  justify-items: center;
+}
+h2{
+  text-transform: uppercase;
+    -webkit-text-stroke-width: medium;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+}
+/* En tu archivo de estilos CSS para el formulario (facturacion.component.scss) */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* O ajusta la altura según tus necesidades */
+
+}
+
+.form-wrapper {
+  max-width: 400px; /* Ancho máximo del formulario */
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  background-color: #ffffff; /* Color de fondo del formulario */
+  display: grid;
+  justify-items: center;
+}
+
+/* Estilos para los elementos del formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: grid;
+    justify-items: center;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.aviso {
+  background-color: #ffcccb;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+.aviso.ng-enter, .aviso.ng-leave {
+  transition: opacity 3s;
+}
+
+.aviso.ng-enter, .aviso.ng-leave.ng-leave-active {
+  opacity: 0;
+}
