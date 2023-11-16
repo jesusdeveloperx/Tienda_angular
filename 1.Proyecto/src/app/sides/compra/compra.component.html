@@ -1,0 +1,22 @@
+<div class="mensaje-exito">
+  <h1 class="title">¡Enhorabuena! Tu compra se ha realizado con éxito</h1>
+  <p>Compra realizada: {{ fechaActual }}</p>
+  <div class="encuesta">
+    <h2>Por favor, añade tu valoración</h2>
+    <div class="rating">
+      <input type="radio" id="estrella5" name="rating" value="5">
+      <label for="estrella5"><img src="https://static.vecteezy.com/system/resources/previews/018/722/931/non_2x/star-shape-symbol-on-transparent-background-free-png.png" alt="5 estrellas"></label>
+      <input type="radio" id="estrella4" name="rating" value="4">
+      <label for="estrella4"><img src="https://static.vecteezy.com/system/resources/previews/018/722/931/non_2x/star-shape-symbol-on-transparent-background-free-png.png" alt="4 estrellas"></label>
+      <input type="radio" id="estrella3" name="rating" value="3">
+      <label for="estrella3"><img src="https://static.vecteezy.com/system/resources/previews/018/722/931/non_2x/star-shape-symbol-on-transparent-background-free-png.png" alt="3 estrellas"></label>
+      <input type="radio" id="estrella2" name="rating" value="2">
+      <label for="estrella2"><img src="https://static.vecteezy.com/system/resources/previews/018/722/931/non_2x/star-shape-symbol-on-transparent-background-free-png.png" alt="2 estrellas"></label>
+      <input type="radio" id="estrella1" name="rating" value="1">
+      <label for="estrella1"><img src="https://static.vecteezy.com/system/resources/previews/018/722/931/non_2x/star-shape-symbol-on-transparent-background-free-png.png" alt="1 estrella"></label>
+    </div>
+    <textarea id="comentario" rows="4" placeholder="Nos importa tu opinión"></textarea>
+    <button (click)="redirigirACarrito()">Enviar</button>
+  </div>
+
+</div>

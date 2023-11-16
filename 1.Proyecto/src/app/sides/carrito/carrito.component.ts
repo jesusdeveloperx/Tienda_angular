@@ -1,8 +1,6 @@
-// carrito.component.ts
 import { Component } from '@angular/core';
 import { CarritoService, ProductoEnCarrito } from './carrito.service';
 import { Router } from '@angular/router';
-import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-carrito',
@@ -26,15 +24,6 @@ export class CarritoComponent {
   ngOnInit() {
     this.productosEnCarrito = this.carritoService.obtenerProductos();
     this.calcularPrecioTotal();
-  }
-
-  seleccionarImagen(imagenUrl: string) {
-    this.imagenSeleccionada = imagenUrl;
-    this.mostrarPrecioTotal = true;
-    const producto = this.productosEnCarrito.find(p => p.imagenUrl === this.imagenSeleccionada);
-    if (producto) {
-      this.cantidadSeleccionada = producto.cantidad;
-    }
   }
 
   eliminarProducto(index: number) {
@@ -73,57 +62,69 @@ export class CarritoComponent {
   }
 
   actualizarCantidad() {
-    if (this.imagenSeleccionada) {
-      const productoActualizado: ProductoEnCarrito = {
-        imagenUrl: this.imagenSeleccionada,
-        cantidad: Math.max(0, this.cantidadSeleccionada),
-        precio: 29.9
-      };
-
-      const index = this.productosEnCarrito.findIndex(producto => producto.imagenUrl === this.imagenSeleccionada);
-      if (index !== -1) {
-        this.productosEnCarrito[index] = productoActualizado;
+    const inputCantidad = document.getElementById('quantity') as HTMLInputElement;
+    if (inputCantidad && this.imagenSeleccionada) {
+      const productoEncontrado = this.productosEnCarrito.find(p => p.imagenUrl === this.imagenSeleccionada);
+      if (productoEncontrado) {
+        productoEncontrado.cantidad = +inputCantidad.value;
+        this.calcularPrecioTotal();
       }
     }
-
-    this.calcularPrecioTotal();
   }
 
-  calcularPrecioTotal(): number {
-    const precioTotal = this.productosEnCarrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
 
-    if (this.mostrarPrecioTotal) {
-      const totalInputElement = document.getElementById('total') as HTMLInputElement;
-      if (totalInputElement) {
-        totalInputElement.value = precioTotal.toFixed(2);
+  seleccionarImagen(imagenUrl: string) {
+    this.imagenSeleccionada = imagenUrl;
+    this.mostrarPrecioTotal = true;
+    const producto = this.productosEnCarrito.find(p => p.imagenUrl === this.imagenSeleccionada);
+    if (producto) {
+      this.cantidadSeleccionada = producto.cantidad;
+      const cantidadInput = document.getElementById('quantity') as HTMLInputElement;
+      if (cantidadInput) {
+        cantidadInput.value = this.cantidadSeleccionada.toString();
+      }
+    } else {
+      this.cantidadSeleccionada = 1;
+      const cantidadInput = document.getElementById('quantity') as HTMLInputElement;
+      if (cantidadInput) {
+        cantidadInput.value = this.cantidadSeleccionada.toString();
       }
     }
+    const inputProducto = document.getElementById('product') as HTMLInputElement;
+    if (inputProducto) {
+      inputProducto.value = this.imagenSeleccionada || '';
+    }
+    this.actualizarCantidad();
+  }
 
+  calcularPrecioTotal() {
+    const precioTotal = this.productosEnCarrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
     this.mostrarAviso2 = precioTotal === 0;
-
-    return precioTotal;
+    const totalInputElement = document.getElementById('total') as HTMLInputElement;
+    if (totalInputElement) {
+      totalInputElement.value = precioTotal.toFixed(2);
+    }
+    return precioTotal.toFixed(2);
   }
 
   tieneProductosEnCarrito(): boolean {
     return this.productosEnCarrito.length > 0;
   }
 
-  comprar() {
-    if (!this.tieneProductosEnCarrito()) {
-      this.mostrarAvisoCarroVacio = true;
-    } else if (!this.isUrlValida) {
-      this.mostrarAvisoCompletaCarrito = true;
+ comprar() {
+  if (!this.tieneProductosEnCarrito()) {
+    this.mostrarAvisoCarroVacio = true;
+  } else if (!this.isUrlValida) {
+    this.mostrarAvisoCompletaCarrito = true;
+  } else {
+    const precioTotal = parseFloat(this.calcularPrecioTotal()); // Convertir a número
+    if (precioTotal > 0) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.router.navigate(['/facturacion']);
     } else {
-      const precioTotal = this.calcularPrecioTotal();
-      if (precioTotal > 0) {
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        this.router.navigate(['/facturacion']);
-      } else {
-        console.log('El precio total es cero. No se navegará a facturación.');
-        this.mostrarAviso2 = true;
-      }
+      console.log('El precio total es cero. No se navegará a facturación.');
+      this.mostrarAviso2 = true;
     }
   }
+}
 }

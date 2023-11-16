@@ -18,27 +18,22 @@ export class FacturacionComponent {
       calleNumero: ['', Validators.required],
       localidad: ['', Validators.required],
       provincia: ['', Validators.required],
-      telefono: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      telefono: ['', [Validators.required, Validators.required]],
       email: ['', [Validators.required, Validators.email]]
     });
   }
-
   enviarFormulario() {
-    if (this.formularioFacturacion.valid) {
-
-      this.router.navigate(['/comprarealizada']);
-    } else {
-      this.marcarCamposComoTocados(this.formularioFacturacion);
-    }
+    this.router.navigate(['/compra']);
   }
 
-  private marcarCamposComoTocados(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control => {
-      control.markAsTouched();
 
-      if (control instanceof FormGroup) {
-        this.marcarCamposComoTocados(control);
-      }
-    });
+  // private marcarCamposComoTocados(formGroup: FormGroup) {
+  //   Object.values(formGroup.controls).forEach(control => {
+  //     control.markAsTouched();
+
+  //     if (control instanceof FormGroup) {
+  //       this.marcarCamposComoTocados(control);
+  //     }
+  //   });
   }
-}
+

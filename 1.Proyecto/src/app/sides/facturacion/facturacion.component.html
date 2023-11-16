@@ -31,7 +31,7 @@
 
     <div class="form-group">
       <label for="telefono">Teléfono</label>
-      <input type="text" id="telefono" formControlName="telefono" required pattern="\d{9}">
+      <input type="text" id="telefono" formControlName="telefono" required>
     </div>
 
     <div class="form-group">
@@ -48,22 +48,22 @@
       <form>
         <div class="form-group">
           <label for="numeroTarjeta">Número de Tarjeta:</label>
-          <input type="text" id="numeroTarjeta" name="numeroTarjeta" pattern="[0-9]{16}" maxlength="16" required>
+          <input type="text" id="numeroTarjeta" name="numeroTarjeta"required>
         </div>
 
         <div class="form-group">
           <label for="fechaCaducidad">Fecha de Caducidad:</label>
-          <input type="text" id="fechaCaducidad" name="fechaCaducidad" placeholder="MM/AA" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" required>
+          <input type="text" id="fechaCaducidad" name="fechaCaducidad" required>
         </div>
 
         <div class="form-group">
           <label for="codigoSeguridad">Código de Seguridad:</label>
-          <input type="text" id="codigoSeguridad" name="codigoSeguridad" pattern="[0-9]{3}" maxlength="3" required>
+          <input type="password" id="codigoSeguridad" name="codigoSeguridad"required>
         </div>
         <div *ngIf="formularioFacturacion.invalid && formularioFacturacion.touched" class="aviso">
           <p >Completa todos los campos obligatorios.</p>
         </div>
-        <button type="button" (click)="enviarFormulario()" [disabled]="formularioFacturacion">Enviar</button>
+        <button type="button" (click)="enviarFormulario()">Enviar</button>
 
       </form>
     </div>

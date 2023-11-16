@@ -5,7 +5,7 @@
     <ul>
       <li class="product" *ngFor="let producto of productosEnCarrito; let i = index">
         <img [src]="producto.imagenUrl" alt="Producto" (click)="seleccionarImagen(producto.imagenUrl)">
-        <span>Cantidad: {{ producto.cantidad }}(input)="actualizarCantidad()"</span>
+        <span>Cantidad: <span id="spanCantidad-{{ producto.imagenUrl }}">{{ producto.cantidad }}</span></span>
         <button (click)="eliminarProducto(i)">Eliminar</button>
       </li>
     </ul>
@@ -16,10 +16,9 @@
       <label for="product">Producto</label>
       <input type="text" id="product" name="product">
     </div>
-
     <div class="form-group">
       <label for="quantity">Cantidad</label>
-      <input type="number" id="quantity" name="quantity"(input)="actualizarCantidad()" required>
+      <input type="number" id="quantity" name="quantity" [(ngModel)]="cantidadSeleccionada" (input)="actualizarCantidad()" required>
     </div>
 
     <div class="form-group" *ngIf="imagenSeleccionada">
@@ -32,7 +31,6 @@
       <input type="number" id="total" name="total" [value]="calcularPrecioTotal()" readonly>
     </div>
 
-    <button type="button" (click)="agregarProductoAlCarrito()">Agregar al Carrito</button>
     <button type="button" (click)="comprar()" [disabled]="!tieneProductosEnCarrito()">Tramitar Pedido</button>
     <div *ngIf="mostrarMensaje" class="aviso">
       <p>{{ mensajeAviso }}</p>

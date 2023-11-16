@@ -1,3 +1,4 @@
+import { CompraComponent } from './sides/compra/compra.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InfantilComponent } from './sides/infantil/infantil.component';
@@ -6,6 +7,7 @@ import { HombreComponent } from './sides/hombre/hombre.component';
 import { CarritoComponent } from './sides/carrito/carrito.component';
 import { PerfilComponent } from './sides/perfil/perfil.component';
 import { FacturacionComponent } from './sides/facturacion/facturacion.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   { path: 'hombre', component: HombreComponent },
@@ -14,6 +16,10 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'facturacion', component: FacturacionComponent },
+  { path: 'compra', component: CompraComponent },
+  { path: 'main', component: MainComponent },
+
+
 
 
 
